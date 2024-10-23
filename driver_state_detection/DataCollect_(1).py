@@ -138,7 +138,7 @@ def main():
     DT_string = DT.strftime("%Y-%m-%d_%H-%M-%S")
    
     # Create a filename based on the formatted date and time
-    file_name = f"Data\{DT_string}.csv"
+    file_name = f"Data\\{DT_string}.csv"
     with open(file_name, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(["Timestamp", "Pitch", "Roll", "Yaw"])  # Write header
