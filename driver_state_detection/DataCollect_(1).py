@@ -37,9 +37,14 @@ def main():
 
     parser = argparse.ArgumentParser(description='Driver State Detection')
 
-    # selection the camera number, default is 0 (webcam)
+    # selection the camera number, default is 1 (webcam)
     parser.add_argument('-c', '--camera', type=int,
                         default=0, metavar='', help='Camera number, default is 0 (webcam)')
+
+    # selection the camera number, default is 1 (webcam)
+    parser.add_argument('-c', '--camera', type=int,
+                        default=1, metavar='', help='Camera number, default is 1 (webcam)')
+
 
     # selection of fps limit for computing time between frames
     parser.add_argument('-F', '--fps_limit', type=int, default=11, metavar='',
