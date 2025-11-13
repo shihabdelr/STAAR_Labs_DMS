@@ -36,10 +36,10 @@ dist_coeffs = np.array(
 def main():
 
     parser = argparse.ArgumentParser(description='Driver State Detection')
-
+    '''
     # selection the camera number, default is 1 (webcam)
     parser.add_argument('-c', '--camera', type=int,
-                        default=0, metavar='', help='Camera number, default is 0 (webcam)')
+                        default=0, metavar='', help='Camera number, default is 0 (webcam)')'''
 
     # selection the camera number, default is 1 (webcam)
     parser.add_argument('-c', '--camera', type=int,
@@ -107,8 +107,9 @@ def main():
 
     # instantiation of the dlib face detector object
     Detector = dlib.get_frontal_face_detector()
-    Predictor = dlib.shape_predictor(
-        "predictor/shape_predictor_68_face_landmarks.dat")  # instantiation of the dlib keypoint detector model
+    # Download latest version
+    path = r"C:\Users\shiha\Documents\GitHub\New_DMS_2024\driver_state_detection\predictor\shape_predictor_68_face_landmarks.dat"
+    Predictor = dlib.shape_predictor(path)  # instantiation of the dlib keypoint detector model
     '''
     the keypoint predictor is compiled in C++ and saved as a .dat inside the "predictor" folder in the project
     inside the folder there is also a useful face keypoint image map to understand the position and numnber of the
@@ -143,7 +144,7 @@ def main():
     DT_string = DT.strftime("%Y-%m-%d_%H-%M-%S")
    
     # Create a filename based on the formatted date and time
-    file_name = f"Data\\{DT_string}.csv"
+    file_name = f"driver_state_detection\\Data\\{DT_string}.csv"
     with open(file_name, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(["Timestamp", "Pitch", "Roll", "Yaw"])  # Write header
