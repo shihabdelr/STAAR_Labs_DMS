@@ -1,3 +1,5 @@
+# Run the code using: Python '.\driver_state_detection\DataCollect_(1).py' -c 0
+# Folder should be on: NEW_DMS_2024
 
 # MODULE IMPORTS
 
